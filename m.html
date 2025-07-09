@@ -1,0 +1,17 @@
+<html>
+<body>
+    <script src="https://js.puter.com/v2/"></script>
+    <script>
+        (async () => {
+            const response = await puter.ai.chat(
+                "Create a fully responsive, modern, and beautiful multi-tool website named ToolVerse using only HTML, CSS, and JavaScript (no backend), with separate HTML files for Home, Tools (with exactly 50 frontend-only JavaScript tools in a grid and modal layout), FAQs (accordion with animations), About (site purpose, tech stack, privacy), and Contact (non-functional form with hover effects), plus features like sticky reusable navbar, scroll-to-top button, Google Fonts, CSS animations (AOS or custom), Flexbox/Grid layout, glassmorphism/neumorphism cards, light/dark mode toggle (optional), responsive design, SEO meta tags, AdSense-ready layout, separate CSS/JS files, no external libraries except AOS (optional), and fully optimized frontend-only performance.", 
+                {model: 'claude-opus-4', stream: true}
+            );
+            
+            for await (const part of response) {
+                puter.print(part?.text);
+            }
+        })();
+    </script>
+</body>
+</html>
